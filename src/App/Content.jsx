@@ -1,19 +1,23 @@
-import { Suspense } from "react";
-import { HashRouter as Router, Navigate, Routes, Route } from "react-router-dom"
-import { MathUtils } from "three";
+import { Suspense } from 'react';
+import {
+  HashRouter as Router,
+  Navigate,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import { MathUtils } from 'three';
 import {
   GizmoHelper,
   GizmoViewport,
   OrbitControls,
   Stats,
   TrackballControls,
-} from "@react-three/drei";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { folder, useControls } from "leva";
+} from '@react-three/drei';
+import { Bloom, EffectComposer } from '@react-three/postprocessing';
+import { folder, useControls } from 'leva';
 
 import {
   Button,
-  Clock,
   Cube,
   Image,
   Lighting,
@@ -23,24 +27,24 @@ import {
   ReactRouterPathAlpha,
   ReactRouterPathOmega,
   Suzanne,
-} from "./components";
+  Island,
+} from './components';
 
 const COMPONENT = Object.freeze({
-  Animation: "Animation",
-  Button: "Button",
-  Clock: "Clock",
-  Cube: "Cube",
-  Cube_Positioned: "Cube_Positioned",
-  None: "None",
-  LoremIpsum: "LoremIpsum",
-  Particles: "Particles",
-  ReactRouter: "ReactRouter",
-  Suzanne: "Suzanne",
+  Button: 'Button',
+  Cube: 'Cube',
+  Cube_Positioned: 'Cube_Positioned',
+  None: 'None',
+  LoremIpsum: 'LoremIpsum',
+  Particles: 'Particles',
+  ReactRouter: 'ReactRouter',
+  Suzanne: 'Suzanne',
+  Island: 'Island',
 });
 
 const CONTROLS = Object.freeze({
-  Orbit: "Orbit",
-  Trackball: "Trackball",
+  Orbit: 'Orbit',
+  Trackball: 'Trackball',
 });
 
 const Content = () => {
@@ -51,37 +55,37 @@ const Content = () => {
     enableGridHelper,
     enableStats,
     useInputControls,
-  } = useControls("General", {
-    enableEffects: { label: "Effects", value: false },
-    enableStats: { label: "Stats", value: false },
+  } = useControls('General', {
+    enableEffects: { label: 'Effects', value: false },
+    enableStats: { label: 'Stats', value: false },
     Helpers: folder({
-      enableAxesHelper: { label: "Axes", value: false },
-      enableGizmoHelper: { label: "Gizmo", value: true },
-      enableGridHelper: { label: "Grid", value: false },
+      enableAxesHelper: { label: 'Axes', value: false },
+      enableGizmoHelper: { label: 'Gizmo', value: true },
+      enableGridHelper: { label: 'Grid', value: false },
     }),
-    "Input Controls": folder({
+    'Input Controls': folder({
       useInputControls: {
-        label: "Controls",
+        label: 'Controls',
         options: CONTROLS,
         value: CONTROLS.Orbit,
       },
     }),
   });
 
-  const { useComponent } = useControls("Components", {
+  const { useComponent } = useControls('Components', {
     useComponent: {
-      label: "Component",
+      label: 'Component',
       options: {
-        "None             ": COMPONENT.None,
-        "Button           ": COMPONENT.Button,
-        "Clock            ": COMPONENT.Clock,
-        "Cube             ": COMPONENT.Cube,
-        "Cube (positioned)": COMPONENT.Cube_Positioned,
-        "Image            ": COMPONENT.Image,
-        "Lorem Ipsum      ": COMPONENT.LoremIpsum,
-        "Particles        ": COMPONENT.Particles,
-        "React Router     ": COMPONENT.ReactRouter,
-        "Suzanne          ": COMPONENT.Suzanne,
+        'None             ': COMPONENT.None,
+        'Button           ': COMPONENT.Button,
+        'Cube             ': COMPONENT.Cube,
+        'Cube (positioned)': COMPONENT.Cube_Positioned,
+        'Image            ': COMPONENT.Image,
+        'Lorem Ipsum      ': COMPONENT.LoremIpsum,
+        'Particles        ': COMPONENT.Particles,
+        'React Router     ': COMPONENT.ReactRouter,
+        'Suzanne          ': COMPONENT.Suzanne,
+        'Island          ': COMPONENT.Island,
       },
       value: COMPONENT.Suzanne,
     },
@@ -113,9 +117,9 @@ const Content = () => {
           <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
             <GizmoViewport
               axisColors={[
-                "hsl(0, 100%, 50%)",
-                "hsl(120, 100%, 50%)",
-                "hsl(240, 100%, 50%)",
+                'hsl(0, 100%, 50%)',
+                'hsl(120, 100%, 50%)',
+                'hsl(240, 100%, 50%)',
               ]}
               labelColor="black"
             />
@@ -131,27 +135,26 @@ const Content = () => {
       )}
       <Lighting />
       <Router>
-      <>
-        {enableComponent(COMPONENT.Button) && <Button />}
-        {enableComponent(COMPONENT.Cube) && <Cube />}
-        {enableComponent(COMPONENT.Cube_Positioned) && (
-          <Cube
-            position={[1, 1, 1]}
-            rotation={[45, 45, 45].map((degrees) =>
-              MathUtils.degToRad(degrees)
-            )}
-          />
-        )}
-        {enableComponent(COMPONENT.ReactRouter) && <ReactRouter />}
-        <Suspense fallback={null}>
-          {enableComponent(COMPONENT.Clock) && <Clock />}
-          {enableComponent(COMPONENT.Image) && <Image />}
-          {enableComponent(COMPONENT.LoremIpsum) && <LoremIpsum />}
-          {enableComponent(COMPONENT.Particles) && <Particles />}
-          {enableComponent(COMPONENT.Suzanne) && <Suzanne />}
-        </Suspense>
-      </>
-      
+        <>
+          {enableComponent(COMPONENT.Button) && <Button />}
+          {enableComponent(COMPONENT.Cube) && <Cube />}
+          {enableComponent(COMPONENT.Cube_Positioned) && (
+            <Cube
+              position={[1, 1, 1]}
+              rotation={[45, 45, 45].map((degrees) =>
+                MathUtils.degToRad(degrees)
+              )}
+            />
+          )}
+          {enableComponent(COMPONENT.ReactRouter) && <ReactRouter />}
+          <Suspense fallback={null}>
+            {enableComponent(COMPONENT.Image) && <Image />}
+            {enableComponent(COMPONENT.LoremIpsum) && <LoremIpsum />}
+            {enableComponent(COMPONENT.Particles) && <Particles />}
+            {enableComponent(COMPONENT.Suzanne) && <Suzanne />}
+          </Suspense>
+        </>
+
         <Routes>
           <Route element={<Navigate to="/" />} path="*" />
           <Route element={<ReactRouterPathAlpha />} path="alpha" />
@@ -159,7 +162,7 @@ const Content = () => {
           <Route element={<></>} path="/" />
         </Routes>
       </Router>
-   </>
+    </>
   );
 };
 
