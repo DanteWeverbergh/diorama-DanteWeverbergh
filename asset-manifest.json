@@ -1,27 +1,24 @@
 {
   "files": {
     "main.css": "/diorama-DanteWeverbergh/static/css/main.d5880afd.chunk.css",
-    "main.js": "/diorama-DanteWeverbergh/static/js/main.d9366986.chunk.js",
-    "main.js.map": "/diorama-DanteWeverbergh/static/js/main.d9366986.chunk.js.map",
-    "runtime-main.js": "/diorama-DanteWeverbergh/static/js/runtime-main.64e7b7c5.js",
-    "runtime-main.js.map": "/diorama-DanteWeverbergh/static/js/runtime-main.64e7b7c5.js.map",
-    "static/js/2.b34a4714.chunk.js": "/diorama-DanteWeverbergh/static/js/2.b34a4714.chunk.js",
-    "static/js/2.b34a4714.chunk.js.map": "/diorama-DanteWeverbergh/static/js/2.b34a4714.chunk.js.map",
-    "static/js/3.1efb3726.chunk.js": "/diorama-DanteWeverbergh/static/js/3.1efb3726.chunk.js",
-    "static/js/3.1efb3726.chunk.js.map": "/diorama-DanteWeverbergh/static/js/3.1efb3726.chunk.js.map",
+    "main.js": "/diorama-DanteWeverbergh/static/js/main.436f5360.chunk.js",
+    "main.js.map": "/diorama-DanteWeverbergh/static/js/main.436f5360.chunk.js.map",
+    "runtime-main.js": "/diorama-DanteWeverbergh/static/js/runtime-main.d11f87d6.js",
+    "runtime-main.js.map": "/diorama-DanteWeverbergh/static/js/runtime-main.d11f87d6.js.map",
+    "static/js/2.f54a9ade.chunk.js": "/diorama-DanteWeverbergh/static/js/2.f54a9ade.chunk.js",
+    "static/js/2.f54a9ade.chunk.js.map": "/diorama-DanteWeverbergh/static/js/2.f54a9ade.chunk.js.map",
+    "static/js/3.ebd7cbd7.chunk.js": "/diorama-DanteWeverbergh/static/js/3.ebd7cbd7.chunk.js",
+    "static/js/3.ebd7cbd7.chunk.js.map": "/diorama-DanteWeverbergh/static/js/3.ebd7cbd7.chunk.js.map",
     "index.html": "/diorama-DanteWeverbergh/index.html",
     "static/css/main.d5880afd.chunk.css.map": "/diorama-DanteWeverbergh/static/css/main.d5880afd.chunk.css.map",
-    "static/js/2.b34a4714.chunk.js.LICENSE.txt": "/diorama-DanteWeverbergh/static/js/2.b34a4714.chunk.js.LICENSE.txt",
-    "static/media/Arteveldehogeschool_favicon.209a12d1.png": "/diorama-DanteWeverbergh/static/media/Arteveldehogeschool_favicon.209a12d1.png",
-    "static/media/SVG_logo.31892e95.svg": "/diorama-DanteWeverbergh/static/media/SVG_logo.31892e95.svg",
-    "static/media/UV_Grid_Sm.8ab40f71.jpg": "/diorama-DanteWeverbergh/static/media/UV_Grid_Sm.8ab40f71.jpg",
-    "static/media/arteveldehogeschool_logo.6220cd57.svg": "/diorama-DanteWeverbergh/static/media/arteveldehogeschool_logo.6220cd57.svg",
+    "static/js/2.f54a9ade.chunk.js.LICENSE.txt": "/diorama-DanteWeverbergh/static/js/2.f54a9ade.chunk.js.LICENSE.txt",
+    "static/media/gelekanarievogel.78733b68.glb": "/diorama-DanteWeverbergh/static/media/gelekanarievogel.78733b68.glb",
     "static/media/suzanne.f8d5e374.glb": "/diorama-DanteWeverbergh/static/media/suzanne.f8d5e374.glb"
   },
   "entrypoints": [
-    "static/js/runtime-main.64e7b7c5.js",
-    "static/js/2.b34a4714.chunk.js",
+    "static/js/runtime-main.d11f87d6.js",
+    "static/js/2.f54a9ade.chunk.js",
     "static/css/main.d5880afd.chunk.css",
-    "static/js/main.d9366986.chunk.js"
+    "static/js/main.436f5360.chunk.js"
   ]
 }
