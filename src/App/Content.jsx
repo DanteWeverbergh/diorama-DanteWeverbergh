@@ -19,10 +19,7 @@ import { folder, useControls } from 'leva';
 import {
   Button,
   Cube,
-  Image,
   Lighting,
-  LoremIpsum,
-  Particles,
   ReactRouter,
   ReactRouterPathAlpha,
   ReactRouterPathOmega,
@@ -35,8 +32,6 @@ const COMPONENT = Object.freeze({
   Cube: 'Cube',
   Cube_Positioned: 'Cube_Positioned',
   None: 'None',
-  LoremIpsum: 'LoremIpsum',
-  Particles: 'Particles',
   ReactRouter: 'ReactRouter',
   Suzanne: 'Suzanne',
   Island: 'Island',
@@ -80,9 +75,6 @@ const Content = () => {
         'Button           ': COMPONENT.Button,
         'Cube             ': COMPONENT.Cube,
         'Cube (positioned)': COMPONENT.Cube_Positioned,
-        'Image            ': COMPONENT.Image,
-        'Lorem Ipsum      ': COMPONENT.LoremIpsum,
-        'Particles        ': COMPONENT.Particles,
         'React Router     ': COMPONENT.ReactRouter,
         'Suzanne          ': COMPONENT.Suzanne,
         'Island          ': COMPONENT.Island,
@@ -148,10 +140,8 @@ const Content = () => {
           )}
           {enableComponent(COMPONENT.ReactRouter) && <ReactRouter />}
           <Suspense fallback={null}>
-            {enableComponent(COMPONENT.Image) && <Image />}
-            {enableComponent(COMPONENT.LoremIpsum) && <LoremIpsum />}
-            {enableComponent(COMPONENT.Particles) && <Particles />}
             {enableComponent(COMPONENT.Suzanne) && <Suzanne />}
+            {enableComponent(COMPONENT.Island) && <Island />}
           </Suspense>
         </>
 
