@@ -1,14 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
-import Model from '../../../Models/model.glb';
+import Model from '../../../Models/island.glb';
+import { useFrame } from '@react-three/fiber';
 
 const Diorama = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(Model);
   const { actions } = useAnimations(animations, group);
+
+  useEffect(() => {
+    console.log(actions);
+    //actions.boom.play();
+  });
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[12.06, 6.95, 17.62]} scale={[0.27, -0.81, 0.27]}>
+      <group position={[12.06, 2.37, 17.62]} scale={[0.27, -0.81, 0.27]}>
         <mesh
           castShadow
           receiveShadow
@@ -33,10 +39,10 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Water.geometry}
         material={materials.water}
-        position={[-4.14, 6.23, 11.92]}
+        position={[-4.14, 1.65, 11.92]}
         scale={[3.87, 0.45, 3.55]}
       />
-      <group position={[3.92, 6.95, 17.62]} scale={[0.27, -0.81, 0.27]}>
+      <group position={[3.92, 2.37, 17.62]} scale={[0.27, -0.81, 0.27]}>
         <mesh
           castShadow
           receiveShadow
@@ -56,7 +62,7 @@ const Diorama = (props) => {
           material={materials['Material.009']}
         />
       </group>
-      <group position={[-13.62, 10.36, 5.05]} scale={[0.27, -0.81, 0.27]}>
+      <group position={[-13.62, 5.78, 5.05]} scale={[0.27, -0.81, 0.27]}>
         <mesh
           castShadow
           receiveShadow
@@ -81,10 +87,10 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Sphere001.geometry}
         material={nodes.Sphere001.material}
-        position={[12.19, 19.86, -7.67]}
+        position={[12.19, 15.28, -7.67]}
         scale={[1.76, 1.76, 1.76]}
       />
-      <group position={[12.43, 7.01, 8.24]} scale={[0.13, -1.11, 0.13]}>
+      <group position={[12.43, 2.43, 8.24]} scale={[0.13, -1.11, 0.13]}>
         <mesh
           castShadow
           receiveShadow
@@ -103,10 +109,10 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Icosphere.geometry}
         material={nodes.Icosphere.material}
-        position={[14.06, 6.25, 6.79]}
-        scale={[0.39, 0.39, 0.39]}
+        position={[14.03, 1.74, 6.79]}
+        scale={[0.6, 0.6, 0.6]}
       />
-      <group position={[14.06, 6.67, 6.79]} scale={[0.25, 0.25, 0.25]}>
+      <group position={[14.03, 2.39, 6.79]} scale={[0.39, 0.39, 0.39]}>
         <mesh
           castShadow
           receiveShadow
@@ -117,10 +123,10 @@ const Diorama = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Icosphere001_2.geometry}
-          material={nodes.Icosphere001_2.material}
+          material={materials.Stam}
         />
       </group>
-      <group position={[14.06, 6.94, 6.79]} scale={[0.15, 0.15, 0.15]}>
+      <group position={[14.03, 2.8, 6.79]} scale={[0.22, 0.22, 0.22]}>
         <mesh
           castShadow
           receiveShadow
@@ -139,18 +145,18 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Icosphere003.geometry}
         material={nodes.Icosphere003.material}
-        position={[14.18, 7, 6.83]}
-        scale={[0.03, 0.03, 0.03]}
+        position={[14.22, 2.9, 6.86]}
+        scale={[0.04, 0.04, 0.04]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Icosphere004.geometry}
         material={nodes.Icosphere004.material}
-        position={[14.18, 7, 6.73]}
-        scale={[0.03, 0.03, 0.03]}
+        position={[14.22, 2.9, 6.71]}
+        scale={[0.04, 0.04, 0.04]}
       />
-      <group position={[12.43, 7.01, 11.08]} scale={[0.13, -1.11, 0.13]}>
+      <group position={[12.43, 2.43, 11.08]} scale={[0.13, -1.11, 0.13]}>
         <mesh
           castShadow
           receiveShadow
@@ -163,120 +169,274 @@ const Diorama = (props) => {
           geometry={nodes.Cylinder011_1.geometry}
           material={nodes.Cylinder011_1.material}
         />
-      </group>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube001.geometry}
-        material={nodes.Cube001.material}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube001_1.geometry}
-        material={materials['Material.001']}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube001_2.geometry}
-        material={nodes.Cube001_2.material}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube001_3.geometry}
-        material={materials.Material}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube001_4.geometry}
-        material={nodes.Cube001_4.material}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube001_5.geometry}
-        material={materials['Material.012']}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.SnowBall002.geometry}
-        material={materials['Snow.005']}
-        position={[10.28, 8.12, 11.97]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.SnowBall003.geometry}
-        material={materials['Snow.006']}
-        position={[9.27, 10.31, 9.72]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.SnowBall005.geometry}
-        material={materials['Snow.008']}
-        position={[9.27, 12.16, 9.71]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.SnowBall006.geometry}
-        material={materials['Snow.009']}
-        position={[6.57, 10.38, 9.72]}
-      />
-      <group position={[14.14, 6.95, 2.62]} scale={[0.27, -0.81, 0.27]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder.geometry}
-          material={materials.Boom}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cylinder_1.geometry}
-          material={nodes.Cylinder_1.material}
+          geometry={nodes.Cylinder011_2.geometry}
+          material={materials['Snow.001']}
         />
       </group>
-      <group position={[10.35, 6.95, 2.62]} scale={[0.27, -0.81, 0.27]}>
+      <group
+        position={[10.21, 2.9, 12.34]}
+        rotation={[0, 0.01, -Math.PI / 2]}
+        scale={[0.44, 0.44, 0.44]}
+      >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder001_1.geometry}
-          material={materials['Boom.001']}
+          geometry={nodes.Plane_1.geometry}
+          material={nodes.Plane_1.material}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Cylinder001_2.geometry}
-          material={materials['Stam.001']}
+          geometry={nodes.Plane_2.geometry}
+          material={nodes.Plane_2.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall002.geometry}
+          material={materials['Snow.011']}
+          position={[-1.15, 0.1, 0]}
+          rotation={[0.01, 0, Math.PI / 2]}
+          scale={[2.27, 2.27, 2.27]}
+        />
+      </group>
+      <group
+        position={[10.21, 2.9, 7.33]}
+        rotation={[0, 0.01, -Math.PI / 2]}
+        scale={[0.44, 0.44, 0.44]}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_1.geometry}
+          material={materials['Material.014']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_2.geometry}
+          material={materials['ligtje.002']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall010.geometry}
+          material={materials['Snow.012']}
+          position={[-1.16, 0.11, -0.12]}
+          rotation={[0.01, 0, Math.PI / 2]}
+          scale={[2.27, 2.27, 2.27]}
+        />
+      </group>
+      <group
+        position={[7.81, 2.9, 13.91]}
+        rotation={[0, -1.56, -1.57]}
+        scale={[0.44, 0.44, 0.44]}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane002_1.geometry}
+          material={materials['Material.015']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane002_2.geometry}
+          material={materials['ligtje.003']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall011.geometry}
+          material={materials['Snow.013']}
+          position={[-1.15, 0.11, 0.01]}
+          rotation={[-1.56, 0, Math.PI / 2]}
+          scale={[2.27, 2.27, 2.27]}
+        />
+      </group>
+      <group
+        position={[7.97, 2.9, 5.52]}
+        rotation={[-3.14, -1.56, -1.57]}
+        scale={[0.44, 0.44, 0.44]}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane003_1.geometry}
+          material={materials['Material.016']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane003_2.geometry}
+          material={materials['ligtje.004']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall012.geometry}
+          material={materials['Snow.014']}
+          position={[1.15, 0.1, -0.01]}
+          rotation={[1.58, 0, -Math.PI / 2]}
+          scale={[2.27, 2.27, 2.27]}
+        />
+      </group>
+      <group position={[12.06, 2.37, 0.58]} scale={[0.27, -0.81, 0.27]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder010.geometry}
+          material={materials['Boom.005']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder010_1.geometry}
+          material={materials['Stam.005']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder010_2.geometry}
+          material={materials['Material.017']}
+        />
+      </group>
+      <group position={[7.85, 3.2, -6.98]} scale={[0.27, -0.81, 0.27]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012.geometry}
+          material={materials['Boom.006']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_1.geometry}
+          material={materials['Stam.006']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_2.geometry}
+          material={materials['Material.018']}
+        />
+      </group>
+      <group position={[-5.96, 6.77, -13.94]} scale={[0.27, -0.81, 0.27]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder013.geometry}
+          material={materials['Boom.007']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder013_1.geometry}
+          material={materials['Stam.007']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder013_2.geometry}
+          material={materials['Material.019']}
+        />
+      </group>
+      <group position={[0, -4.58, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube001.geometry}
+          material={materials['Snow.010']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube001_1.geometry}
+          material={nodes.Cube001_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube001_2.geometry}
+          material={nodes.Cube001_2.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube001_3.geometry}
+          material={nodes.Cube001_3.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall003.geometry}
+          material={materials['Snow.006']}
+          position={[9.27, 10.31, 9.72]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall005.geometry}
+          material={materials['Snow.008']}
+          position={[9.27, 12.16, 9.71]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SnowBall006.geometry}
+          material={materials['Snow.009']}
+          position={[6.57, 10.38, 9.72]}
         />
       </group>
       <mesh
-        name="Sphere"
         castShadow
         receiveShadow
         geometry={nodes.Sphere.geometry}
         material={nodes.Sphere.material}
-        position={[0, 19.86, 0]}
+        position={[0, 15.28, 0]}
         scale={[1.76, 1.76, 1.76]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Sphere002.geometry}
-        material={nodes.Sphere002.material}
-        position={[4.17, 15.91, 15.28]}
+        geometry={nodes.Wolk1.geometry}
+        material={nodes.Wolk1.material}
+        position={[4.17, 11.32, 15.28]}
         scale={[1.76, 1.76, 1.76]}
       />
+      <group position={[0, -4.58, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube005.geometry}
+          material={nodes.Cube005.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube005_1.geometry}
+          material={nodes.Cube005_1.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube005_2.geometry}
+          material={nodes.Cube005_2.material}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube005_3.geometry}
+          material={materials['Material.012']}
+        />
+      </group>
     </group>
   );
 };
 
-useGLTF.preload('/model.glb');
+useGLTF.preload('/island.glb');
 
 export default Diorama;
