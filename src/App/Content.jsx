@@ -16,23 +16,12 @@ import {
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { folder, useControls } from 'leva';
 
-import {
-  Button,
-  Cube,
-  Lighting,
-  ReactRouter,
-  ReactRouterPathAlpha,
-  ReactRouterPathOmega,
-  Bird,
-  Diorama,
-} from './components';
+import { Button, Cube, Lighting, Diorama } from './components';
 
 const COMPONENT = Object.freeze({
   Button: 'Button',
   Cube: 'Cube',
   Cube_Positioned: 'Cube_Positioned',
-  None: 'None',
-  ReactRouter: 'ReactRouter',
   Bird: 'Bird',
   Diorama: 'Diorama',
 });
@@ -71,12 +60,9 @@ const Content = () => {
     useComponent: {
       label: 'Component',
       options: {
-        'None             ': COMPONENT.None,
         'Button           ': COMPONENT.Button,
         'Cube             ': COMPONENT.Cube,
         'Cube (positioned)': COMPONENT.Cube_Positioned,
-        'React Router     ': COMPONENT.ReactRouter,
-        'Bird             ': COMPONENT.Bird,
         'Diorama          ': COMPONENT.Diorama,
       },
       value: COMPONENT.Diorama,
@@ -138,19 +124,11 @@ const Content = () => {
               )}
             />
           )}
-          {enableComponent(COMPONENT.ReactRouter) && <ReactRouter />}
+
           <Suspense fallback={null}>
-            {enableComponent(COMPONENT.Bird) && <Bird />}
             {enableComponent(COMPONENT.Diorama) && <Diorama />}
           </Suspense>
         </>
-
-        <Routes>
-          <Route element={<Navigate to="/" />} path="*" />
-          <Route element={<ReactRouterPathAlpha />} path="alpha" />
-          <Route element={<ReactRouterPathOmega />} path="omega" />
-          <Route element={<></>} path="/" />
-        </Routes>
       </Router>
     </>
   );
