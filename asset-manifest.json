@@ -1,24 +1,25 @@
 {
   "files": {
     "main.css": "/diorama-DanteWeverbergh/static/css/main.d5880afd.chunk.css",
-    "main.js": "/diorama-DanteWeverbergh/static/js/main.436f5360.chunk.js",
-    "main.js.map": "/diorama-DanteWeverbergh/static/js/main.436f5360.chunk.js.map",
-    "runtime-main.js": "/diorama-DanteWeverbergh/static/js/runtime-main.d11f87d6.js",
-    "runtime-main.js.map": "/diorama-DanteWeverbergh/static/js/runtime-main.d11f87d6.js.map",
-    "static/js/2.f54a9ade.chunk.js": "/diorama-DanteWeverbergh/static/js/2.f54a9ade.chunk.js",
-    "static/js/2.f54a9ade.chunk.js.map": "/diorama-DanteWeverbergh/static/js/2.f54a9ade.chunk.js.map",
-    "static/js/3.ebd7cbd7.chunk.js": "/diorama-DanteWeverbergh/static/js/3.ebd7cbd7.chunk.js",
-    "static/js/3.ebd7cbd7.chunk.js.map": "/diorama-DanteWeverbergh/static/js/3.ebd7cbd7.chunk.js.map",
+    "main.js": "/diorama-DanteWeverbergh/static/js/main.24154149.chunk.js",
+    "main.js.map": "/diorama-DanteWeverbergh/static/js/main.24154149.chunk.js.map",
+    "runtime-main.js": "/diorama-DanteWeverbergh/static/js/runtime-main.e77bb8e2.js",
+    "runtime-main.js.map": "/diorama-DanteWeverbergh/static/js/runtime-main.e77bb8e2.js.map",
+    "static/js/2.3e884c5f.chunk.js": "/diorama-DanteWeverbergh/static/js/2.3e884c5f.chunk.js",
+    "static/js/2.3e884c5f.chunk.js.map": "/diorama-DanteWeverbergh/static/js/2.3e884c5f.chunk.js.map",
+    "static/js/3.81936a59.chunk.js": "/diorama-DanteWeverbergh/static/js/3.81936a59.chunk.js",
+    "static/js/3.81936a59.chunk.js.map": "/diorama-DanteWeverbergh/static/js/3.81936a59.chunk.js.map",
     "index.html": "/diorama-DanteWeverbergh/index.html",
     "static/css/main.d5880afd.chunk.css.map": "/diorama-DanteWeverbergh/static/css/main.d5880afd.chunk.css.map",
-    "static/js/2.f54a9ade.chunk.js.LICENSE.txt": "/diorama-DanteWeverbergh/static/js/2.f54a9ade.chunk.js.LICENSE.txt",
+    "static/js/2.3e884c5f.chunk.js.LICENSE.txt": "/diorama-DanteWeverbergh/static/js/2.3e884c5f.chunk.js.LICENSE.txt",
     "static/media/gelekanarievogel.78733b68.glb": "/diorama-DanteWeverbergh/static/media/gelekanarievogel.78733b68.glb",
+    "static/media/model.53f82c7f.glb": "/diorama-DanteWeverbergh/static/media/model.53f82c7f.glb",
     "static/media/suzanne.f8d5e374.glb": "/diorama-DanteWeverbergh/static/media/suzanne.f8d5e374.glb"
   },
   "entrypoints": [
-    "static/js/runtime-main.d11f87d6.js",
-    "static/js/2.f54a9ade.chunk.js",
+    "static/js/runtime-main.e77bb8e2.js",
+    "static/js/2.3e884c5f.chunk.js",
     "static/css/main.d5880afd.chunk.css",
-    "static/js/main.436f5360.chunk.js"
+    "static/js/main.24154149.chunk.js"
   ]
 }
