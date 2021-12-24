@@ -1,3 +1,1 @@
-Github pages link
-
-`https://gdmgent-2122-xr.github.io/diorama-DanteWeverbergh`
+[Github Pages](https://gdmgent-2122-xr.github.io/diorama-DanteWeverbergh)
