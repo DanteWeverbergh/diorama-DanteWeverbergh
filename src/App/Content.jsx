@@ -24,7 +24,8 @@ import {
   ReactRouterPathAlpha,
   ReactRouterPathOmega,
   Suzanne,
-  Island,
+  Bird,
+  Diorama,
 } from './components';
 
 const COMPONENT = Object.freeze({
@@ -34,7 +35,8 @@ const COMPONENT = Object.freeze({
   None: 'None',
   ReactRouter: 'ReactRouter',
   Suzanne: 'Suzanne',
-  Island: 'Island',
+  Bird: 'Bird',
+  Diorama: 'Diorama',
 });
 
 const CONTROLS = Object.freeze({
@@ -77,7 +79,8 @@ const Content = () => {
         'Cube (positioned)': COMPONENT.Cube_Positioned,
         'React Router     ': COMPONENT.ReactRouter,
         'Suzanne          ': COMPONENT.Suzanne,
-        'Island          ': COMPONENT.Island,
+        'Bird          ': COMPONENT.Bird,
+        'Diorama          ': COMPONENT.Diorama,
       },
       value: COMPONENT.Suzanne,
     },
@@ -141,7 +144,8 @@ const Content = () => {
           {enableComponent(COMPONENT.ReactRouter) && <ReactRouter />}
           <Suspense fallback={null}>
             {enableComponent(COMPONENT.Suzanne) && <Suzanne />}
-            {enableComponent(COMPONENT.Island) && <Island />}
+            {enableComponent(COMPONENT.Bird) && <Bird />}
+            {enableComponent(COMPONENT.Diorama) && <Diorama />}
           </Suspense>
         </>
 

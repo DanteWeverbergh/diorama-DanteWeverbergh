@@ -1,10 +1,11 @@
 import { useLoader } from '@react-three/fiber';
 
 import model from '../../../Models/gelekanarievogel.glb';
+import Diorama from '../../../Models/model.glb';
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
-const Island = (props) => {
+const Bird = (props) => {
   const group = useRef();
   const { nodes, materials } = useGLTF(model);
   return (
@@ -23,4 +24,4 @@ const Island = (props) => {
 
 useGLTF.preload('/gelekanarievogel.glb');
 
-export default Island;
+export default Bird;
