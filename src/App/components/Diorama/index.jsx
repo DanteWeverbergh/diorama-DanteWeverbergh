@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
-import Model from '../../../Models/island.glb';
+import Model from '../../../Models/sneeuenweiland.glb';
 import { useFrame } from '@react-three/fiber';
 
 const Diorama = (props) => {
@@ -10,8 +10,10 @@ const Diorama = (props) => {
 
   useEffect(() => {
     console.log(actions);
-    //actions.boom.play();
   });
+
+  const title = document.getElementById('title');
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[12.06, 2.37, 17.62]} scale={[0.27, -0.81, 0.27]}>
@@ -41,6 +43,7 @@ const Diorama = (props) => {
         material={materials.water}
         position={[-4.14, 1.65, 11.92]}
         scale={[3.87, 0.45, 3.55]}
+        onClick={(e) => title.classList.add('hidden')}
       />
       <group position={[3.92, 2.37, 17.62]} scale={[0.27, -0.81, 0.27]}>
         <mesh
@@ -344,6 +347,14 @@ const Diorama = (props) => {
           material={materials['Material.019']}
         />
       </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.sky.geometry}
+        material={nodes.sky.material}
+        position={[0.35, 20.64, 0.15]}
+        scale={[20.43, 20.43, 20.43]}
+      />
       <group position={[0, -4.58, 0]}>
         <mesh
           castShadow
@@ -433,10 +444,17 @@ const Diorama = (props) => {
           material={materials['Material.012']}
         />
       </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.snowflake.geometry}
+        material={nodes.snowflake.material}
+        position={[-4.67, 19.08, 58.63]}
+      />
     </group>
   );
 };
 
-useGLTF.preload('/island.glb');
+useGLTF.preload('/sneeuenweiland.glb');
 
 export default Diorama;
