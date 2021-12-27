@@ -3,8 +3,6 @@ import { HashRouter as Router } from 'react-router-dom';
 
 import { OrbitControls, TrackballControls } from '@react-three/drei';
 
-import { folder, useControls } from 'leva';
-
 import { Diorama } from './components';
 
 const Content = () => {

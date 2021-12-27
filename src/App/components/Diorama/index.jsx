@@ -1,18 +1,21 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import Model from '../../../Models/cadeau.glb';
-import { useFrame } from '@react-three/fiber';
-import { useSpring } from '@react-three/cannon';
+import { useParams } from 'react-router-dom';
 
 const Diorama = (props) => {
+  const name = useParams();
+
+  console.log(name);
+
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(Model);
-  const { actions } = useAnimations(animations, group);
+  //const { actions } = useAnimations(animations, group);
   const message = document.getElementById('message');
 
   const open = () => {
-    console.log('klik');
     message.classList.remove('hidden');
+    console.log(window.location.pathname);
   };
 
   return (
