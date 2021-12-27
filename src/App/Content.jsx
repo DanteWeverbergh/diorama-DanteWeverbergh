@@ -7,11 +7,6 @@ import { folder, useControls } from 'leva';
 
 import { Diorama } from './components';
 
-const CONTROLS = Object.freeze({
-  Orbit: 'Orbit',
-  Trackball: 'Trackball',
-});
-
 const Content = () => {
   return (
     <>

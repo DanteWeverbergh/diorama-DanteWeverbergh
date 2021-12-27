@@ -1,18 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
-import Model from '../../../Models/sneeuenweiland.glb';
+import Model from '../../../Models/cadeau.glb';
 import { useFrame } from '@react-three/fiber';
+import { useSpring } from '@react-three/cannon';
 
 const Diorama = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(Model);
   const { actions } = useAnimations(animations, group);
+  const message = document.getElementById('message');
 
-  useEffect(() => {
-    console.log(actions);
-  });
-
-  const title = document.getElementById('title');
+  const open = () => {
+    console.log('klik');
+    message.classList.remove('hidden');
+  };
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -43,7 +44,6 @@ const Diorama = (props) => {
         material={materials.water}
         position={[-4.14, 1.65, 11.92]}
         scale={[3.87, 0.45, 3.55]}
-        onClick={(e) => title.classList.add('hidden')}
       />
       <group position={[3.92, 2.37, 17.62]} scale={[0.27, -0.81, 0.27]}>
         <mesh
@@ -360,7 +360,7 @@ const Diorama = (props) => {
           castShadow
           receiveShadow
           geometry={nodes.Cube001.geometry}
-          material={materials['Snow.010']}
+          material={nodes.Cube001.material}
         />
         <mesh
           castShadow
@@ -407,7 +407,7 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Sphere.geometry}
         material={nodes.Sphere.material}
-        position={[0, 15.28, 0]}
+        position={[0, 15.28, 11.85]}
         scale={[1.76, 1.76, 1.76]}
       />
       <mesh
@@ -415,7 +415,7 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Wolk1.geometry}
         material={nodes.Wolk1.material}
-        position={[4.17, 11.32, 15.28]}
+        position={[4.17, 11.32, -4.06]}
         scale={[1.76, 1.76, 1.76]}
       />
       <group position={[0, -4.58, 0]}>
@@ -447,6 +447,26 @@ const Diorama = (props) => {
       <mesh
         castShadow
         receiveShadow
+        geometry={nodes.cadeau.geometry}
+        material={nodes.cadeau.material}
+        position={[18.17, 3.42, 3.39]}
+        //onClick={() => message.classList.remove('hidden')}
+        onClick={() => open()}
+      />
+
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.cadeau_top.geometry}
+        material={nodes.cadeau_top.material}
+        position={[18.04, 4.37, 3.36]}
+        scale={[1.36, 0.37, 1.36]}
+        onClick={() => console.log('klik')}
+      />
+
+      <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.snowflake.geometry}
         material={nodes.snowflake.material}
         position={[-4.67, 19.08, 58.63]}
@@ -455,6 +475,6 @@ const Diorama = (props) => {
   );
 };
 
-useGLTF.preload('/sneeuenweiland.glb');
+useGLTF.preload('/cadeau.glb');
 
 export default Diorama;

@@ -1,28 +1,25 @@
 import { Canvas } from '@react-three/fiber';
 import Content from './Content';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
 
 const App = () => {
+  const name = 'dirk';
   return (
     <>
-      <h1 id="title" className="">
-        Diorama
-      </h1>
-      <Canvas camera={{ fov: 55, position: [30, 5, 20] }}>
-        {/* 
-      
-      <hemisphereLight
-        color={0xffffff}
-        groundColor={0xffffff}
-        intensity={0.2}
-      />
-      */}
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[20, 10, 20]} intensity={0.5} />
-        <directionalLight position={[0, 10, 20]} intensity={0.8} />
-        <spotLight intensity={0.1} position={[30, 10, 0]} />
+      <div className="diorama">
+        <h1 id="message" className="hidden">
+          Happy New year and merry chirstmass {name}!!!
+        </h1>
 
-        <Content linear={false} shadows={true} />
-      </Canvas>
+        <Canvas camera={{ fov: 55, position: [30, 5, 20] }}>
+          <ambientLight intensity={0.1} />
+          <directionalLight position={[20, 10, 20]} intensity={0.5} />
+          <directionalLight position={[0, 10, 20]} intensity={0.8} />
+          <spotLight intensity={0.1} position={[30, 10, 0]} />
+          <Content linear={false} shadows={true} />
+        </Canvas>
+      </div>
     </>
   );
 };
