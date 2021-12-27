@@ -1,25 +1,36 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
-import Model from '../../../Models/cadeau.glb';
+import Model from '../../../Models/animation.glb';
 import { useParams } from 'react-router-dom';
 
 const Diorama = (props) => {
-  const name = useParams();
-
-  console.log(name);
-
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(Model);
-  //const { actions } = useAnimations(animations, group);
-  const message = document.getElementById('message');
+  const { actions } = useAnimations(animations, group);
 
-  const open = () => {
-    message.classList.remove('hidden');
-    console.log(window.location.pathname);
-  };
+  useEffect(() => {
+    actions.kicking.play();
+  });
 
   return (
     <group ref={group} {...props} dispose={null}>
+      <group
+        position={[17.82, 4.41, 2.69]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.01, 0.01, 0.01]}
+      >
+        <primitive object={nodes.mixamorigHips} />
+        <skinnedMesh
+          geometry={nodes.Beta_Joints.geometry}
+          material={materials.Beta_Joints_MAT}
+          skeleton={nodes.Beta_Joints.skeleton}
+        />
+        <skinnedMesh
+          geometry={nodes.Beta_Surface.geometry}
+          material={materials['asdf1:Beta_HighLimbsGeoSG2']}
+          skeleton={nodes.Beta_Surface.skeleton}
+        />
+      </group>
       <group position={[12.06, 2.37, 17.62]} scale={[0.27, -0.81, 0.27]}>
         <mesh
           castShadow
@@ -350,14 +361,6 @@ const Diorama = (props) => {
           material={materials['Material.019']}
         />
       </group>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.sky.geometry}
-        material={nodes.sky.material}
-        position={[0.35, 20.64, 0.15]}
-        scale={[20.43, 20.43, 20.43]}
-      />
       <group position={[0, -4.58, 0]}>
         <mesh
           castShadow
@@ -453,10 +456,7 @@ const Diorama = (props) => {
         geometry={nodes.cadeau.geometry}
         material={nodes.cadeau.material}
         position={[18.17, 3.42, 3.39]}
-        //onClick={() => message.classList.remove('hidden')}
-        onClick={() => open()}
       />
-
       <mesh
         castShadow
         receiveShadow
@@ -464,9 +464,7 @@ const Diorama = (props) => {
         material={nodes.cadeau_top.material}
         position={[18.04, 4.37, 3.36]}
         scale={[1.36, 0.37, 1.36]}
-        onClick={() => console.log('klik')}
       />
-
       <mesh
         castShadow
         receiveShadow
@@ -478,6 +476,6 @@ const Diorama = (props) => {
   );
 };
 
-useGLTF.preload('/cadeau.glb');
+useGLTF.preload('/animations.glb');
 
 export default Diorama;
