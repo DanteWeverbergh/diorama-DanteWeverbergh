@@ -2,12 +2,11 @@ import { Canvas } from '@react-three/fiber';
 import Content from './Content';
 
 const App = () => {
-  const name = window.location.pathname;
   return (
     <>
       <div className="diorama">
         <h1 id="message" className="hidden">
-          Happy New year and merry chirstmass {name}!!!
+          Happy New year and merry chirstmas!!!
         </h1>
 
         <Canvas camera={{ fov: 55, position: [30, 5, 20] }}>
