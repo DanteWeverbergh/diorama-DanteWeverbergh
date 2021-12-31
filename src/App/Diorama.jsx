@@ -9,7 +9,7 @@ const App = () => {
           Happy New year and merry chirstmas!!!
         </h1>
 
-        <Canvas camera={{ fov: 55, position: [30, 5, 20] }}>
+        <Canvas className="canvas" camera={{ fov: 55, position: [30, 5, 20] }}>
           <ambientLight intensity={0.1} />
           <directionalLight position={[20, 10, 20]} intensity={0.5} />
           <directionalLight position={[0, 10, 20]} intensity={0.8} />
