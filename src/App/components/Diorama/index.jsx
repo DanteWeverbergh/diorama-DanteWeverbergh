@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import Model from '../../../Models/diorama.glb';
-
-import { useFrame } from '@react-three/fiber';
 import { useEffect } from 'react/cjs/react.development';
 
 const Diorama = (props) => {
@@ -604,6 +602,7 @@ const Diorama = (props) => {
             receiveShadow
             geometry={nodes.Cadeau_1.geometry}
             material={materials['Material.057']}
+            onClick={() => right()}
           />
         </group>
 

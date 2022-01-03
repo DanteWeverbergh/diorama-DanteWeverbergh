@@ -3,7 +3,6 @@ import Video from '../Video/Video.mov';
 import { useState } from 'react';
 
 function Start() {
-  // const nameInput = document.getElementById('name').value;
   const [name, setName] = useState('');
 
   return (
@@ -15,7 +14,9 @@ function Start() {
       <div className="overlay">
         <div className="content">
           <h1>Welkom</h1>
+
           <p>Vind het juiste cadeau en krijg een leuke boodschap.</p>
+          <p>Vul je naam in en druk op start!</p>
           <div className="input">
             <input
               id="name"
