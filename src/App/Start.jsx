@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import Video from '../Video/Video.mov';
+import { useState } from 'react';
 
 function Start() {
   // const nameInput = document.getElementById('name').value;
+  const [name, setName] = useState('');
 
   return (
     <>
@@ -15,14 +17,17 @@ function Start() {
           <h1>Welkom</h1>
           <p>Vind het juiste cadeau en krijg een leuke boodschap.</p>
           <div className="input">
-            <input id="name" type="text" placeholder="name" value={''} />
+            <input
+              id="name"
+              type="text"
+              placeholder="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </div>
 
-          <button onClick={() => console.log(document.getElementById('name'))}>
-            Test
-          </button>
-
-          <Link className="link" to={`/diorama/joske`}>
+          <Link className="link" to={`/diorama/${name}`}>
             Start
           </Link>
         </div>
