@@ -26,7 +26,7 @@ const Diorama = (props) => {
     document.getElementById('message').classList.remove('hidden');
     setActive(!active);
 
-    navigate('/cadeau');
+    //navigate('/cadeau');
   };
 
   const wrong = () => {

@@ -1,12 +1,15 @@
 import { Canvas } from '@react-three/fiber';
+import { useParams } from 'react-router-dom';
 import Content from './Content';
 
 const App = () => {
+  let { name } = useParams();
+
   return (
     <>
       <div className="diorama">
         <h1 id="message" className="hidden">
-          Happy New year and merry chirstmas!!!
+          Happy New year and merry chirstmas {name} !!!
         </h1>
 
         <Canvas className="canvas" camera={{ fov: 55, position: [30, 5, 20] }}>

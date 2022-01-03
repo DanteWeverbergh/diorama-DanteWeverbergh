@@ -9,7 +9,7 @@ function Routing() {
     <>
       <Routes>
         <Route path="/home" element={<Start />} />
-        <Route path="/diorama" element={<App />} />
+        <Route path="/diorama/:name" element={<App />} />
         <Route path="/cadeau" element={<Cadeau />} />
 
         <Route path="*" element={<Navigate to="/home" />} />
