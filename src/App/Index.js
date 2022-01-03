@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router';
+import { Route, Routes, Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import Start from './Start';
 import App from './Diorama';
@@ -7,18 +7,13 @@ import Cadeau from './Cadeau';
 function Routing() {
   return (
     <>
-      <Switch>
-        <Route path={'/home'}>
-          <Start />
-        </Route>
-        <Route path={'/diorama'}>
-          <App />
-        </Route>
-        <Route path={'/cadeau'}>
-          <Cadeau />
-        </Route>
-        <Redirect to={'/home'} />
-      </Switch>
+      <Routes>
+        <Route path="/home" element={<Start />} />
+        <Route path="/diorama" element={<App />} />
+        <Route path="/cadeau" element={<Cadeau />} />
+
+        <Route path="*" element={<Navigate to="/home" />} />
+      </Routes>
     </>
   );
 }

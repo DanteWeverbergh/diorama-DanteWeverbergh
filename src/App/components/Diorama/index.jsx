@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import Model from '../../../Models/diorama.glb';
-import { useHistory } from 'react-router';
+
+import { useNavigate } from 'react-router';
 
 const Diorama = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(Model);
   const { actions } = useAnimations(animations, group);
-  const history = useHistory();
+  //const history = useHistory();
+  const navigate = useNavigate();
 
   const [active, setActive] = useState(false);
 
@@ -24,7 +26,7 @@ const Diorama = (props) => {
     document.getElementById('message').classList.remove('hidden');
     setActive(!active);
 
-    history.push('/cadeau');
+    navigate('/cadeau');
   };
 
   const wrong = () => {
@@ -38,7 +40,7 @@ const Diorama = (props) => {
         receiveShadow
         geometry={nodes.Water.geometry}
         material={materials.water}
-        position={[-4.14, 1.65, 12.27]}
+        position={[-5, 1.65, 12.27]}
         scale={[3.87, 0.45, 3.55]}
       />
       <group
