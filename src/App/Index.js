@@ -6,9 +6,9 @@ function Routing() {
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Start />} />
+        <Route path="/" element={<Start />} />
         <Route path="/diorama/:name" element={<App />} />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
