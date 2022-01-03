@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import Model from '../../../Models/diorama.glb';
-import { useEffect } from 'react/cjs/react.development';
 
 const Diorama = (props) => {
   const group = useRef();
